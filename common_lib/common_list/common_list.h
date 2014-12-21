@@ -12,9 +12,10 @@ typedef struct common_list_struct
   uint32_t                      size;
 }
 common_list;
+#define offsetof(TYPE, MEMB) ((size_t) &((TYPE *)0)->MEMB)
 
 #define common_list_entry(node, type, list_member)   \
-    ((type *)((char*)(node) - ns_offsetof(type, list_member)))
+    ((type *)((char*)(node) - offsetof(type, list_member)))
 
 //Initialize a list header
 void common_list_init(common_list *head);
