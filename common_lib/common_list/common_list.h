@@ -1,10 +1,8 @@
-#ifndef _COMMON_LIST_
-#define _COMMON_LIST_
-#include "common_type.h"
+#ifndef __COMMON_LIST_H__
+#define __COMMON_LIST_H__
+#include <stdio.h>
 
 #define unsigned int uint32_t
-
-extern "C" {
 
 typedef struct common_list_struct
 {
@@ -65,5 +63,4 @@ void common_list_remove(common_list *entry);
 //Unlink 'head' and make the first entry the new 'head'
 common_list *common_list_unlink_head(common_list *head);
 
-}
 #endif
